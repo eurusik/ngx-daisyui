@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ngx-daisyui/cdk": ["libs/cdk/src/index.ts"],
+      "@ngx-daisyui/components": ["libs/components/src/index.ts"],
+      "@ngx-daisyui/core": ["libs/core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
