@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "ngx-daisyui",
   "affected": {
-    "defaultBase": "rz-product"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "package.json": {
