@@ -8,16 +8,6 @@
     "test": "nx test",
     "postinstall": "ngcc --properties es2020 browser module main"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --relative"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix"
-    ]
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~14.0.0",
@@ -74,5 +64,17 @@
     "ts-jest": "27.1.4",
     "ts-node": "~10.8.0",
     "typescript": "~4.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "ng lint && lint-staged",
+      "pre-push": "ng build --prod"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,scss,md,html,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
