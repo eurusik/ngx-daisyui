@@ -67,13 +67,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "ng lint && lint-staged",
-      "pre-push": "ng build --prod"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts,scss,md,html,json}": [
-      "prettier --write",
+    "{apps,libs}/**/*.{ts,json,md,scss,html}": [
+      "npm run affected:lint  -- --uncommitted --parallel -- --fix",
+      "npm run format:write -- --uncommitted",
       "git add"
     ]
   }
